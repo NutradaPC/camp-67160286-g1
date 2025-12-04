@@ -33,6 +33,22 @@
                         <input id="LastName" class="form-control">
                     </div>
                 </div>
+
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4">
+                        <label for="BDate">Birth Date</label>
+                    </div>
+                    <div class="col">
+                        <input type="BDate" id="BDate" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <form>
+                        <label for="BDate">Sex</label>
+                        <input type="radio" id="html" name="Sex" value="Male">
+                    </form>
+                </div>
             </form>
         </div>
     </body>
