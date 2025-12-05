@@ -44,10 +44,33 @@
                 </div>
 
                 <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4">
+                       <label for="Sex">Sex</label>
+                    </div>
                     <form>
-                        <label for="BDate">Sex</label>
-                        <input type="radio" id="html" name="Sex" value="Male">
+                        <div class="col-sm-12 col-md-5">
+                        <td><input type="radio" name="Gender" id="Male">Male</td>
+                        <td><input type="radio" name="Gender" id="Female">Female</td>
+                        </div>
                     </form>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4">
+                        <label for="Photo">Photo</label>
+                    </div>
+                    <div class="col">
+                        <input type="file" name="Photo" id="Photo">
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4">
+                        <label for="Address">Address</label>
+                    </div>
+                    <div class="col">
+                        <textarea name="Address" id="Address"></textarea>
+                    </div>
                 </div>
             </form>
         </div>
