@@ -7,7 +7,7 @@
                 <label for="FullName" class="col-form-label">Name</label>
             </div>
             <div class="col">
-                <input type="text" id="FullName" class="form-control is-invalid">
+                <input type="text" id="FullName" class="form-control is-valid">
                 <div class="valid-feedback">
                     ถูกต้อง
                 </div>
