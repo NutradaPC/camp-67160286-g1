@@ -1,153 +1,157 @@
 @extends('template.default')
 
 @section('content')
-<form>
+<div class="container mt-5">
+    <h2 class="mb-4">แบบฟอร์มบันทึกข้อมูล Workshop</h2>
+    <form id="workshopForm" class="needs-validation" novalidate>
         <div class="row mt-3">
             <div class="col-sm-12 col-md-4">
-                <label for="FullName" class="col-form-label">Name</label>
+                <label for="FullName" class="col-form-label">ชื่อ</label>
             </div>
             <div class="col">
-                <input type="text" id="FullName" class="form-control is-valid">
-                <div class="valid-feedback">
-                    ถูกต้อง
+                <input type="text" id="FullName" class="form-control" required>
+                <div class="invalid-feedback">กรุณากรอกชื่อ</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label for="LastName" class="col-form-label">นามสกุล</label>
+            </div>
+            <div class="col">
+                <input type="text" id="LastName" class="form-control" required>
+                <div class="invalid-feedback">กรุณากรอกนามสกุล</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label for="BDate" class="col-form-label">วันเดือนปีเกิด</label>
+            </div>
+            <div class="col">
+                <input type="date" id="BDate" class="form-control" required>
+                <div class="invalid-feedback">กรุณาระบุวันเดือนปีเกิด</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label for="Age" class="col-form-label">อายุ</label>
+            </div>
+            <div class="col">
+                <input type="number" id="Age" class="form-control" min="1" required>
+                <div class="invalid-feedback">กรุณาระบุอายุที่ถูกต้อง</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label class="col-form-label">เพศ</label>
+            </div>
+            <div class="col-sm-12 col-md-8 pt-2">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male" required>
+                    <label class="form-check-label" for="Male">ชาย</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female">
+                    <label class="form-check-label" for="Female">หญิง</label>
+                </div>
+                <div class="text-danger small d-none" id="gender-error">กรุณาเลือกเพศ</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label for="Photo" class="col-form-label">รูปภาพ</label>
+            </div>
+            <div class="col">
+                <input type="file" id="Photo" class="form-control" accept="image/*" required>
+                <div class="invalid-feedback">กรุณาแนบรูปภาพ</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label for="Address" class="col-form-label">ที่อยู่</label>
+            </div>
+            <div class="col">
+                <textarea rows="4" id="Address" class="form-control" required></textarea>
+                <div class="invalid-feedback">กรุณากรอกที่อยู่</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label for="Color" class="col-form-label">สีที่ชอบ</label>
+            </div>
+            <div class="col">
+                <select id="Color" class="form-select" required>
+                    <option value="">-- เลือกสีที่ชอบ --</option>
+                    <option value="red">แดง</option>
+                    <option value="blue">น้ำเงิน</option>
+                    <option value="yellow">เหลือง</option>
+                    <option value="black">ดำ</option>
+                    <option value="white">ขาว</option>
+                </select>
+                <div class="invalid-feedback">กรุณาเลือกสีที่ชอบ</div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-4">
+                <label class="col-form-label">แนวเพลงที่ชอบ</label>
+            </div>
+            <div class="col-sm-12 col-md-8 pt-2">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Music" id="Country" value="Country" required>
+                    <label class="form-check-label" for="Country">ลูกทุ่ง / คันทรี่</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Music" id="Pop" value="Pop">
+                    <label class="form-check-label" for="Pop">ป๊อป</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Music" id="RaB" value="RnB">
+                    <label class="form-check-label" for="RaB">R&B</label>
                 </div>
             </div>
         </div>
 
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                            <label for="LastName" class="col-form-label">Lastname</label> </div>
-                        <div class="col">
-                            <input type="text" name="LastName" id="LastName" class="form-control">
-                        </div>
-                    </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="consent" required>
+                    <label class="form-check-label" for="consent">ยินยอมให้เก็บข้อมูล</label>
+                    <div class="invalid-feedback">คุณต้องกดยินยอมก่อนส่งข้อมูล</div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                            <label for="BDate" class="col-form-label">Birth Date</label>
-                        </div>
-                        <div class="col">
-                            <input type="date" name="BDate" id="BDate" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                        <label class="col-form-label">Sex</label>
-                        </div>
-                        <div class="col-sm-12 col-md-8 pt-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male">
-                                <label class="form-check-label" for="Male">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female">
-                                <label class="form-check-label" for="Female">Female</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                            <label for="Photo" class="col-form-label">Photo</label>
-                        </div>
-                        <div class="col">
-                            <input type="file" name="Photo" id="Photo" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                            <label for="Address" class="col-form-label">Address</label>
-                        </div>
-                        <div class="col">
-                            <textarea rows="4" name="Address" id="Address" class="form-control"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                            <label for="Color" class="col-form-label">Fav Color</label>
-                        </div>
-                        <div class="col">
-                            <select name="Color" id="Color" class="form-select"> <option value="red">Red</option>
-                                <option value="blue">Blue</option>
-                                <option value="yellow">Yellow</option>
-                                <option value="black">Black</option>
-                                <option value="white">White</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-sm-12 col-md-4">
-                        <label class="col-form-label">Music</label>
-                        </div>
-                        <div class="col-sm-12 col-md-8 pt-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Music" id="Country" value="Country">
-                                <label class="form-check-label" for="Country">Country</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Music" id="Pop" value="Pop">
-                                <label class="form-check-label" for="Pop">Pop</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Music" id="RaB" value="RnB">
-                                <label class="form-check-label" for="RaB">R&B</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="consent" id="consent">
-                                <label class="form-check-label" for="consent">ยินยอมให้เก็บข้อมูล</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-4">
-                        <div class="col">
-                            <button class="btn btn-light" onclick="clickMe()" type="reset">Reset</button>
-                            <button class="btn btn-success" type="submit">Submit</button>
-                        </div>
-                    </div>
+        <div class="row mt-4 mb-5">
+            <div class="col">
+                <button class="btn btn-light border" type="reset">ล้างข้อมูล</button>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </div>
     </form>
+</div>
 @endsection
 
-
 @push('scripts')
-    <script>
-        let clickMe = function(){
-            let fname = document.getElementById('Fullname');
-            fname.value = "form clickMe"
-            console.log(fname.value);
-
+<script>
+    document.getElementById('workshopForm').addEventListener('submit', function (event) {
+        const form = event.target;
+        
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน!");
+        } else {
+            event.preventDefault();
+            alert("บันทึกข้อมูลสำเร็จ! (Pass)");
         }
-
-        let myfunc = (callback)=>{
-            callback("Cin callback");
-
-        }
-
-        callMe = (param)=>{
-            console.log(param);
-        }
-
-        myfunc(callMe)
-
-        alert("Hello JS")
-        console.log('Hello');
-        console.error('Hello error');
-        console.warn('Hello warning');
-
-        let myvar1 = 1
-        let myvar2 = "1"0
-        console.log(myvar1+myvar2);
-
-
-
-    </script>
+        form.classList.add('was-validated');
+    }, false);
+</script>
 @endpush
