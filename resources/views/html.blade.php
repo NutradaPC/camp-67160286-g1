@@ -130,7 +130,7 @@
 
         <div class="row mt-4 mb-5">
             <div class="col">
-                <button class="btn btn-light border" type="reset">ล้างข้อมูล</button>
+                <button class="btn btn-light border" type="reset">Reset</button>
                 <button class="btn btn-success" type="submit">Submit</button>
             </div>
         </div>
@@ -146,10 +146,10 @@
         if (!form.checkValidity()) {
             event.preventDefault();
             event.stopPropagation();
-            alert("กรุณากรอกข้อมูลให้ครบถ้วน!");
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
         } else {
             event.preventDefault();
-            alert("บันทึกข้อมูลสำเร็จ! (Pass)");
+            alert("บันทึกข้อมูลสำเร็จ");
         }
         form.classList.add('was-validated');
     }, false);
