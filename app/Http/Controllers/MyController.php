@@ -6,25 +6,14 @@ use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    //
-    public $myval ="";
-
-    function __construct(){
-
-    }
-
-    function info(){
-        return view('myview.info'); 
-    }                 
-        
-
+    // Function Index: เรียกหน้าฟอร์ม
     function index(){
-        return view('myview.index');
+        return view('html'); 
     }
 
-    function calculate(Request $req){
-        echo $req ->input('mynumber');
-        $data['num'] = $req -> input('mynumber');
-        return view('myview.calculate',$data);
+    // Function Store: รับค่าและส่งไปแสดงผลหน้าใหม่
+    function store(Request $req){
+        $data = $req->all();
+        return view('result', compact('data'));
     }
 }
