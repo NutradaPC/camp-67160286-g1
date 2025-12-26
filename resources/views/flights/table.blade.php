@@ -17,10 +17,10 @@
             <td>{{ $item ->number_of_seats }}</td>
             <td>{{ $item ->price }}</td>
             <td>
-                <a class="btn btn-warning" href="url('/flight/'.$item->id.'/edit')">
+                <a class="btn btn-warning" href="url('/flight/'. $item->id .'/edit')">
                     แก้ไข
                 </a>
-                <form 
+                <form
                     style="display:inline-block"
                     action="{{ url('/flights/'.$item->id) }}" method="post">
                     @csrf
